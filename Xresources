@@ -1,0 +1,34 @@
+! Import color & font
+#include ".xrdb/color/dracula2"
+#include ".xrdb/fonts/sourcecodepro"
+
+! URxvt configs
+! font spacing
+URxvt*letterSpace:		-2
+URxvt.lineSpace:		0
+
+! general settings
+URxvt*saveline:			2000
+URxvt*termName:			rxvt-256color
+URxvt*iso14755:			false
+URxvt*urgentOnBell:		true
+
+! appearance
+URxvt*depth:		32
+URxvt*scrollBar:	false
+URxvt*scrollBar_right:	false
+URxvt*internalBorder:	24
+URxvt*externalBorder:	0
+URxvt.geometry:		86x36
+!urxvt*transparent: 	true
+!urxvt*shading:		35
+urxvt*background:	rgba:0000/0000/0200/c800
+
+
+! xft font configuration
+Xft.autohint:	0
+Xft.lcdfilter:	lcddefault
+Xft.hintstyle:	hintslight
+Xft.hinting:	1
+Xft.antialias:	1
+Xft.rgba:	rgb

@@ -1,0 +1,5 @@
+! fonts
+URxvt*font:		xft:Source Code Pro:regular:size=10
+URxvt*boldFont:		xft:Source Code Pro:bold:size=10
+URxvt*italicFont:	xft:Source Code Pro:italic:size=10
+URxvt*boldItalicFont:	xft:Source Code Pro:bold italic:size=10

@@ -1,0 +1,10 @@
+make executable script with
+#!/bin/bash
+
+then sudo chmod +x myscript.sh
+
+open terminal in /opt/android-sdk/platform-tools/
+
+then execute command
+1. to enable ./enable.sh
+2. to disable ./disable.sh

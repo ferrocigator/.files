@@ -1,0 +1,100 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+	output_format = i3bar
+        colors = false
+        interval = 5
+	markup = pango
+	color_good = "#00FF6E"
+  	color_degraded = "#FFC401"
+  	color_bad = "#FF5F94"
+}
+
+#order += "ipv6"
+order += "wireless _first_"
+#order += "ethernet _first_"
+#order += "run_watch DHCP"
+#order += "run_watch VPNC"
+#order += "path_exists VPN"
+#order += "battery all"
+order += "cpu_usage"
+order += "cpu_temperature 0"
+order += "disk /"
+order += "load"
+order += "memory"
+#order += "volume_master"
+order += "tztime local"
+
+wireless _first_ {
+        format_up = "<span background='#8badb0'> %essid %quality %bitrate </span>"
+        format_down = "W: Down"
+}
+
+ethernet _first_ {
+        format_up = "E: %ip (%speed)"
+        format_down = "E: down"
+}
+
+run_watch DHCP {
+        pidfile = "/var/run/dhclient*.pid"
+}
+run_watch VPNC {
+        # file containing the PID of a vpnc process
+        pidfile = "/var/run/vpnc/pid"
+}
+path_exists VPN {
+        # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+        path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+battery all {
+        format = "%status %percentage %remaining"
+	format_down = "No battery"
+        status_chr = "⚡ CHR"
+        status_bat = "🔋 BAT"
+        status_unk = "? UNK"
+        status_full = "☻ FULL"
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = 10
+}
+
+cpu_usage {
+	format = "<span background='#9ecf2d'> CPU %usage </span>"
+	max_threshold = 75
+}
+
+#volume_master {
+#	format = “♪: %volume”
+#	format_muted = “♪: muted (%volume)”
+#}
+
+cpu_temperature 0 {
+        format = "<span background='#e0d669'> %degrees °C </span>"
+	max_threshold = 60
+}
+
+disk "/" {
+        format = "<span background='#4eaaad'> %free </span>"
+}
+
+load {
+        format = "<span background='#ab8bad'> Load %5min </span>"
+	max_threshold = 0.6
+}
+
+memory {
+        format = "<span background='#d4b4b4'> %used of %available </span>"
+        threshold_degraded = "1G"
+        format_degraded = "MEMORY < %available"
+}
+
+tztime local {
+        format = "<span background='#c9c9c9'> %time </span>"
+	format_time = "%d.%-b.%Y %H:%M"
+}

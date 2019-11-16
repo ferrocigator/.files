@@ -69,6 +69,10 @@ static const char *voldown[] = { "amixer", "set", "Master", "5%-", NULL };
 static const char *voltoggle[] = { "amixer", "set", "Master", "toggle", NULL };
 static const char *lightup[] = { "light", "-A", "10", NULL };
 static const char *lightdown[] = { "light", "-U", "10", NULL };
+static const char *nnn[] = { "st", "-e", "nnn", NULL };
+static const char *www[] = { "firefox", NULL };
+static const char *reboot[] = { "reboot", NULL };
+static const char *shutdown[] = { "poweroff", NULL };
 
 static Key keys[] = {
 	/* modifier                     key         function        argument */
@@ -79,6 +83,10 @@ static Key keys[] = {
 	{ 0,                            XK_voltog,  spawn,          {.v = voltoggle } },
 	{ MODKEY,                       XK_F11,     spawn,          {.v = lightup } },
 	{ MODKEY,                       XK_F10,     spawn,          {.v = lightdown } },
+	{ MODKEY,                       XK_F3,      spawn,          {.v = nnn } },
+	{ MODKEY,                       XK_F2,      spawn,          {.v = www } },
+	{ MODKEY|Mod1Mask,              XK_r,       spawn,          {.v = reboot } },
+	{ MODKEY|Mod1Mask,              XK_s,       spawn,          {.v = shutdown } },
 	{ MODKEY,                       XK_b,       togglebar,      {0} },
 	{ MODKEY,                       XK_j,       focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,       focusstack,     {.i = -1 } },

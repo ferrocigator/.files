@@ -7,6 +7,14 @@
 
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
-
-alias mirrors='sudo reflector --verbose --latest 200 --number 5 --sort rate --save /etc/pacman.d/mirrorlist'
-alias dotf='/usr/bin/git --git-dir=/home/ffs/dotf/ --work-tree=/home/ffs'
+alias pac='sudo pacman'				# pacman
+alias pacs='sudo pacman -S'			# install
+alias pacsy='sudo pacman -Syu'			# update
+alias pacr='sudo pacman -Rsn'			# remove
+alias pacss='sudo pacman -Ss'			# search
+alias paci='sudo pacman -Si'			# info
+alias pacq='sudo pacman -Qdt'			# list orphan
+alias pacro='sudo pacman -Rsn $(pacman -Qqdt)'	# remove orphan
+alias pacc='sudo pacman -Sc'			# clean cache
+alias paclf='sudo pacman -Ql'			# list files
+alias pacqe='sudo pacman -Qe'			# list pkg

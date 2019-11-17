@@ -32,5 +32,6 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-# while true; do /usr/local/bin/dwm > /dev/null; done;
-# exec $HOME/.local/bin/startdwm
+slstatus &
+hsetroot -full ~/mybg/bg7.jpg &
+exec dwm

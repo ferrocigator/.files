@@ -18,3 +18,7 @@ alias pacro='sudo pacman -Rsn $(pacman -Qqdt)'	# remove orphan
 alias pacc='sudo pacman -Sc'			# clean cache
 alias paclf='sudo pacman -Ql'			# list files
 alias pacqe='sudo pacman -Qe'			# list pkg
+alias mirror='sudo reflector --verbose --latest 200 --number 5 --sort rate --save /etc/pacman.d/mirrorlist'
+
+# Custom bash prompt via kirsle.net/wizards/ps1.html
+export PS1="\[$(tput bold)\]\[$(tput setaf 1)\]>_ \[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 1)\]:\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
